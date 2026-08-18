@@ -1,6 +1,3 @@
-"Função que calcula disciplinas disponiveis "
-
-
 def disciplinas_disponiveis(disciplinas, concluidas):
     """
     Retorna as disciplinas que o aluno pode cursar atualmente.
