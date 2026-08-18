@@ -31,13 +31,3 @@ class Disciplina:
 
     def __str__(self):
         return f"{self.codigo} - {self.nome} ({self.carga_horaria}h)"
-
-disciplina = Disciplina(
-    codigo="INF101",
-    nome="Programação I",
-    carga_horaria=60,
-    periodo_recomendado=1,
-)
-
-print("Código da disciplina:", disciplina.codigo)
-print("Nome da disciplina:", disciplina.nome)
