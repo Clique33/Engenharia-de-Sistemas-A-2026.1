@@ -4,7 +4,21 @@ class Disciplina:
         self.nome = nome
         self.carga_horaria = carga_horaria
         self.periodo_recomendado = periodo_recomendado
-        self.pre_requisitos = pre_requisitos if pre_requisitos is not None else []
+        self.pre_requisitos = pre_requisitos 
+        if pre_requisitos is None:
+            self.pre_requisitos = []
+
+    def obter_informações(self):
+        return {
+            "codigo": self.codigo,
+            "nome": self.nome,
+            "carga_horaria": self.carga_horaria,
+            "periodo": self.periodo_recomendado,
+            "pre_requisitos": self.pre_requisitos,
+            }
+
+    def __str__(self):
+        return f"{self.codigo} - {self.nome} ({self.carga_horaria}h)"
 
     def adicionar_pre_requisito(self, disciplina_codigo: str):
         """Adiciona o código de uma disciplina pré-requisito."""
@@ -17,3 +31,13 @@ class Disciplina:
 
     def __str__(self):
         return f"{self.codigo} - {self.nome} ({self.carga_horaria}h)"
+
+disciplina = Disciplina(
+    codigo="INF101",
+    nome="Programação I",
+    carga_horaria=60,
+    periodo_recomendado=1,
+)
+
+print("Código da disciplina:", disciplina.codigo)
+print("Nome da disciplina:", disciplina.nome)
