@@ -1,10 +1,11 @@
-
+import  curriculo
+import disciplina 
 #TESTE
 
 def criaCurriculo(nome="curso", disciplinas=[]):
     
     
-    c = Curriculo(nome)
+    c = curriculo.Curriculo(nome)
     
     for dp in disciplinas:
         d = disciplina.Disciplina(dp.codigo, dp.nome, 60, dp.periodo_recomendado, [])
