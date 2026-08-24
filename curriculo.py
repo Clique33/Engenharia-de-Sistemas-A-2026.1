@@ -74,6 +74,7 @@ def criaCurriculo(nome="curso", disciplinas=[]):
         d = Disciplina(disciplina.nome, disciplina.codigo, disciplina.periodo)
         c.adicionar_disciplina(d)
 
+
     c.mostrar_disciplinas()
 
 
