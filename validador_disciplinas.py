@@ -1,30 +1,39 @@
+from curriculo import Curriculo
+
 class ValidadorDisciplinas:
-    def __init__(self):
-        # Dicionário de pré-requisitos (Código da Disciplina -> Lista de Códigos Exigidos)
-        self._pre_requisitos = {
-            "ENG456": ["ELE123"],
-            "PROG02": ["PROG01", "MAT101"],
-            "FIS002": ["FIS001", "MAT101"]
-        }
-        self._historico_aluno = []
+    def __init__(self, curriculo: Curriculo):
+        self.curriculo = curriculo
+        self.historico_aluno = set()
 
-    def carregar_historico(self, disciplinas_cursadas):
-        self._historico_aluno = disciplinas_cursadas
+    def carregar_historico(self, codigos_cursados: list):
+        self.historico_aluno = set(codigos_cursados)
 
-    def consultar_pre_requisitos(self, codigo_disciplina):
-        # Retorna a lista de pré-requisitos. Se não existir, retorna lista vazia.
-        return self._pre_requisitos.get(codigo_disciplina, [])
+    def _obter_pre_requisitos_limpos(self, codigo_disciplina: str) -> list:
+        disciplina = self.curriculo.obter_disciplina(codigo_disciplina)
+        if not disciplina:
+            return []
 
-    def verificar_permissao(self, codigo_disciplina):
-        pre_reqs = self.consultar_pre_requisitos(codigo_disciplina)
-        
-        # Validação: Se não há pré-requisitos, permissão concedida
-        if not pre_reqs:
-            return True
-        
-        # Validação: Verifica se todos os itens exigidos estão no histórico do aluno
-        for requisito in pre_reqs:
-            if requisito not in self._historico_aluno:
-                return False
-                
-        return True
+        reqs_limpos = []
+        for pre in disciplina.pre_requisitos:
+            if "," in pre:
+                reqs_limpos.extend(p.strip() for p in pre.split(","))
+            else:
+                reqs_limpos.append(pre.strip())
+        return reqs_limpos
+
+    def verificar_permissao(self, codigo_disciplina: str) -> bool:
+        if codigo_disciplina in self.historico_aluno:
+            return False
+
+        if not self.curriculo.obter_disciplina(codigo_disciplina):
+            return False
+
+        pre_reqs = self._obter_pre_requisitos_limpos(codigo_disciplina)
+        return all(req in self.historico_aluno for req in pre_reqs)
+
+    def disciplinas_disponiveis(self) -> list:
+        disponiveis = []
+        for codigo in self.curriculo.disciplinas:
+            if self.verificar_permissao(codigo):
+                disponiveis.append(codigo)
+        return disponiveis
