@@ -1,0 +1,639 @@
+{
+    "IME01-00508": {
+        "nome": "Cálculo Diferencial e Integral I",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "IME04-00627": {
+        "nome": "Introdução ao Processamento de Dados",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "IME03-01913": {
+        "nome": "Geometria Analítica e Cálculo Vetorial I",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "IME03-02046": {
+        "nome": "Geometria Descritiva I",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "QUI07-03793": {
+        "nome": "Química X",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "FIS01-05095": {
+        "nome": "Física Teórica e Experimental I",
+        "periodo_recomendado": 1,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "IME03-00587": {
+        "nome": "Desenho Básico",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME03-04269"
+        ]
+    },
+    "IME01-00854": {
+        "nome": "Cálculo Diferencial e Integral II",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00508"
+        ]
+    },
+    "IME02-01388": {
+        "nome": "Álgebra Linear III",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "QUI07-03865": {
+        "nome": "Química XI",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "QUI07-03793"
+        ]
+    },
+    "IME06-04541": {
+        "nome": "Cálculo Numérico IV",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00508",
+            "IME04-00627"
+        ]
+    },
+    "FIS02-05143": {
+        "nome": "Física Teórica e Experimental II",
+        "periodo_recomendado": 2,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00508",
+            "FIS01-05095"
+        ]
+    },
+    "IME03-00738": {
+        "nome": "Desenho Técnico I",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME03-00587"
+        ]
+    },
+    "IME01-03646": {
+        "nome": "Cálculo Diferencial e Integral III",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00854"
+        ]
+    },
+    "IME02-04629": {
+        "nome": "Análise Vetorial",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00854"
+        ]
+    },
+    "FIS03-05185": {
+        "nome": "Física Teórica e Experimental III",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FIS02-05143"
+        ]
+    },
+    "IME05-05316": {
+        "nome": "Probabilidade e Estatística III",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00854"
+        ]
+    },
+    "FEN03-05787": {
+        "nome": "Mecânica Técnica",
+        "periodo_recomendado": 3,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-00854",
+            "FIS01-05095"
+        ]
+    },
+    "FEN02-01064": {
+        "nome": "Engenharia na Sociedade I",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "FEN03-02040": {
+        "nome": "Fenômenos de Transporte",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME02-04629",
+            "FIS02-05143"
+        ]
+    },
+    "FEN07-02162": {
+        "nome": "Introdução à Engenharia Ambiental",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "FEN04-02198": {
+        "nome": "Eletricidade II",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME02-01388",
+            "FIS03-05185"
+        ]
+    },
+    "FEN01-04833": {
+        "nome": "Resistência dos Materiais Básica",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN03-05787"
+        ]
+    },
+    "FIS04-05212": {
+        "nome": "Física Teórica e Experimental IV",
+        "periodo_recomendado": 4,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FIS03-05185"
+        ]
+    },
+    "FEN04-00944": {
+        "nome": "Circuitos Elétricos I",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-02198"
+        ]
+    },
+    "FEN05-01620": {
+        "nome": "Eletrônica I",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FIS03-05185"
+        ]
+    },
+    "FEN06-03559": {
+        "nome": "Algorítmos Computacionais",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME04-00627"
+        ]
+    },
+    "FEN05-04923": {
+        "nome": "Modelos Matemáticos Aplicados à Engenharia Elétrica III",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "IME01-03646",
+            "IME02-04629"
+        ]
+    },
+    "FEN04-05105": {
+        "nome": "Eletromagnetismo III",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-02198",
+            "IME02-04629"
+        ]
+    },
+    "FEN04-05153": {
+        "nome": "Conversão Eletromecânica de Energia III",
+        "periodo_recomendado": 5,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-02198"
+        ]
+    },
+    "FEN05-01840": {
+        "nome": "Eletrônica II",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-00944",
+            "FEN05-01620"
+        ]
+    },
+    "FEN07-02722": {
+        "nome": "Segurança e Higiene do Trabalho",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-110"
+        ]
+    },
+    "FEN06-03648": {
+        "nome": "Estruturas de Informação I",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03559"
+        ]
+    },
+    "FEN05-04498": {
+        "nome": "Técnicas Digitais I",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN05-01620"
+        ]
+    },
+    "FEN04-05197": {
+        "nome": "Materiais Elétricos e Magnéticos",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-05105"
+        ]
+    },
+    "FEN04-05222": {
+        "nome": "Circuitos Elétricos IV",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-00944",
+            "FEN05-04923"
+        ]
+    },
+    "FEN04-05253": {
+        "nome": "Análise de Sistemas Físicos I",
+        "periodo_recomendado": 6,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN05-04923"
+        ]
+    },
+    "FEN06-03713": {
+        "nome": "Análise de Algorítmos",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN05-04498"
+        ]
+    },
+    "FEN06-03787": {
+        "nome": "Fundamentos de Computadores Digitais I",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03559",
+            "FEN05-04498"
+        ]
+    },
+    "FEN06-03860": {
+        "nome": "Instalações de Ambiente Computacional",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN05-01840",
+            "FEN04-05222"
+        ]
+    },
+    "FAF03-04439": {
+        "nome": "Administração Aplicada à Engenharia III",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "FEN05-04561": {
+        "nome": "Técnicas Digitais II",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN05-04498"
+        ]
+    },
+    "FEN05-04975": {
+        "nome": "Princípios de Telecomunicações III",
+        "periodo_recomendado": 7,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-05222"
+        ]
+    },
+    "FEN05-05025": {
+        "nome": "Controle e Servomecanismos III",
+        "periodo_recomendado": 7,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN04-05253"
+        ]
+    },
+    "FEN06-03980": {
+        "nome": "Características das Linguagens de Programação I",
+        "periodo_recomendado": 8,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03648"
+        ]
+    },
+    "FEN06-04049": {
+        "nome": "Laboratório de Programação I",
+        "periodo_recomendado": 8,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03648"
+        ]
+    },
+    "FEN06-04119": {
+        "nome": "Arquitetura de Computadores I",
+        "periodo_recomendado": 8,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03787",
+            "FEN05-04561"
+        ]
+    },
+    "FEN06-04192": {
+        "nome": "Microcomputadores e Microprocessadores I",
+        "periodo_recomendado": 8,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03787",
+            "FEN05-04561"
+        ]
+    },
+    "FEN06-04243": {
+        "nome": "Engenharia de Sistemas A",
+        "periodo_recomendado": 8,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03559",
+            "FAF03-04439"
+        ]
+    },
+    "FCE02-04657": {
+        "nome": "Introdução à Economia III",
+        "periodo_recomendado": 8,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": []
+    },
+    "FEN06-04314": {
+        "nome": "Engenharia de Sistemas B",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03648",
+            "FEN06-04243"
+        ]
+    },
+    "FEN06-04516": {
+        "nome": "Teoria de Compiladores",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03713",
+            "FEN06-03980"
+        ]
+    },
+    "FEN06-04578": {
+        "nome": "Projeto de Graduação XI-A",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-170"
+        ]
+    },
+    "FEN06-04664": {
+        "nome": "Arquitetura de Sistemas Operacionais",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-03648",
+            "FEN06-04119"
+        ]
+    },
+    "FEN06-04718": {
+        "nome": "Teleprocessamento e Redes de Computadores",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-04119",
+            "FEN05-04975"
+        ]
+    },
+    "FEN06-04832": {
+        "nome": "Projeto de Ambiente Computacional",
+        "periodo_recomendado": 9,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN07-02722"
+        ]
+    },
+    "FEN06-05038": {
+        "nome": "Estágio Supervisionado XI - A",
+        "periodo_recomendado": 9,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN07-02722"
+        ]
+    },
+    "FEN02-01390": {
+        "nome": "Engenharia na Sociedade II",
+        "periodo_recomendado": 10,
+        "atendida": true,
+        "tipo": "Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-170"
+        ]
+    },
+    "FEN06-04386": {
+        "nome": "Engenharia de Sistemas C",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-04314"
+        ]
+    },
+    "FEN06-04635": {
+        "nome": "Projeto de Graduação XI-B",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-04578"
+        ]
+    },
+    "FEN06-05080": {
+        "nome": "Controle de Processos por Computador",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "Não Obrigatória",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "FEN06-04664",
+            "FEN04-05253"
+        ]
+    },
+    "FEN06-04889": {
+        "nome": "Tópicos Especiais em Sistemas e Computação A",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "E. Restrita",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-170"
+        ]
+    },
+    "FEN06-04939": {
+        "nome": "Tópicos Especiais em Sistemas e Computação B",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "E. Restrita",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-170"
+        ]
+    },
+    "FEN06-04990": {
+        "nome": "Tópicos Especiais em Sistemas e Computação C",
+        "periodo_recomendado": 10,
+        "atendida": false,
+        "tipo": "E. Restrita",
+        "turma_no_periodo": true,
+        "pre_requisitos": [
+            "TRAVA-170"
+        ]
+    }
+}

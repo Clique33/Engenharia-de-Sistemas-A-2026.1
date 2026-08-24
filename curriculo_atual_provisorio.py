@@ -1,18 +1,9 @@
-from dataclasses import dataclass, field
 import json
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
-
-@dataclass
-class Disciplina:
-    codigo: str
-    nome: str
-    periodo: int
-    creditos: int
-    carga_horaria: int
-    pre_requisitos: List[str] = field(default_factory=list)
-
+# Importando a classe Disciplina do seu arquivo disciplina.py
+from disciplina import Disciplina
 
 class Curriculo:
 
@@ -38,12 +29,12 @@ class Curriculo:
 
         curriculo = cls()
         for item in dados:
+            # A nova classe Disciplina exige os parâmetros abaixo nesta ordem ou nomeados:
             disciplina = Disciplina(
                 codigo=item["codigo"],
                 nome=item["nome"],
-                periodo=item["periodo"],
-                creditos=item["creditos"],
                 carga_horaria=item["carga_horaria"],
+                periodo_recomendado=item["periodo"], # Adaptado de "periodo" para "periodo_recomendado"
                 pre_requisitos=item.get("pre_requisitos", []),
             )
             curriculo.adicionar_disciplina(disciplina)
