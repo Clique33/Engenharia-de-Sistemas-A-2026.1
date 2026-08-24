@@ -1,30 +1,30 @@
 [
   {
-    "codigo": "FEN05-04923",
+    "codigo": "FEN04-05105",
     "nome": "Eletromagnetismo III",
     "periodo": 5,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN04-02198"]
   },
   {
-    "codigo": "FEN04-00944",
+    "codigo": "FEN04-05153",
     "nome": "Conversao Eletromecanica de Energia III",
     "periodo": 5,
     "creditos": 4,
     "carga_horaria": 90,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN04-02198"]
   },
   {
-    "codigo": "FEN05-01620",
+    "codigo": "FEN06-04119",
     "nome": "Arquitetura de Computadores I",
     "periodo": 5,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN05-04561","FEN06-03787"]
   },
   {
-    "codigo": "FEN04-05105",
+    "codigo": "FEN05-01840",
     "nome": "Eletronica I",
     "periodo": 5,
     "creditos": 4,
@@ -32,7 +32,7 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN04-05222",
+    "codigo": "FEN04-00944",
     "nome": "Circuitos Eletricos I",
     "periodo": 5,
     "creditos": 4,
@@ -40,135 +40,128 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN04-05197",
+    "codigo": "FEN05-04923",
     "nome": "Modelos Matemat. Aplicados a Eng. Eletrica III",
     "periodo": 5,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["IME01-03646","IME02-04629"]
   },
   {
-    "codigo": "FAF03-04439",
-    "nome": "Seguranca e Higiene do Trabalho III",
+    "codigo": "FAF07-02722",
+    "nome": "Seguranca e Higiene do Trabalho ",
     "periodo": 5,
     "creditos": 2,
     "carga_horaria": 30,
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN04-05153",
+    "codigo": "FEN05-01840",
     "nome": "Eletronica II",
     "periodo": 6,
     "creditos": 4,
     "carga_horaria": 90,
-    "pre_requisitos": ["FEN04-05105"]
+    "pre_requisitos": ["FEN04-01620,FEN04-00944"]
   },
   {
-    "codigo": "FEN04-05253",
+    "codigo": "FEN04-05222",
     "nome": "Circuitos Eletricos IV",
     "periodo": 6,
     "creditos": 4,
     "carga_horaria": 90,
-    "pre_requisitos": ["FEN04-05222"]
+    "pre_requisitos": ["FEN04-00944,FEN05-04923"]
   },
   {
-    "codigo": "FEN05-01840",
+    "codigo": "FEN04-05253",
     "nome": "Analise de Sistemas Fisicos I",
     "periodo": 6,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
-  },
-  {
-    "codigo": "FEN06-03559",
-    "nome": "Teoria de Estruturas de Informacao I",
-    "periodo": 6,
-    "creditos": 3,
-    "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN05-04923"]
   },
   {
     "codigo": "FEN06-03648",
-    "nome": "Tecnicas Digitais I",
+    "nome": "Estruturas de Informacao I",
     "periodo": 6,
-    "creditos": 4,
-    "carga_horaria": 75,
-    "pre_requisitos": []
-  },
-  {
-    "codigo": "FEN06-03713",
-    "nome": "Fundamentos de Microcomputadores I",
-    "periodo": 7,
-    "creditos": 4,
-    "carga_horaria": 75,
-    "pre_requisitos": ["FEN06-03648"]
-  },
-  {
-    "codigo": "FEN06-03787",
-    "nome": "Tecnicas Digitais II",
-    "periodo": 7,
-    "creditos": 4,
-    "carga_horaria": 75,
-    "pre_requisitos": ["FEN06-03648"]
-  },
-  {
-    "codigo": "FEN06-03860",
-    "nome": "Analise de Algoritmos",
-    "periodo": 7,
     "creditos": 3,
     "carga_horaria": 60,
     "pre_requisitos": ["FEN06-03559"]
   },
   {
-    "codigo": "FEN07-02722",
+    "codigo": "FEN05-04498",
+    "nome": "Tecnicas Digitais I",
+    "periodo": 6,
+    "creditos": 4,
+    "carga_horaria": 75,
+    "pre_requisitos": ["FEN05-01620"]
+  },
+  {
+    "codigo": "FEN06-04192",
+    "nome": "Microcomputadores e Microprocessadores I",
+    "periodo": 7,
+    "creditos": 4,
+    "carga_horaria": 75,
+    "pre_requisitos": ["FEN05-04561","FEN06-03787"]
+  },
+  {
+    "codigo": "FEN05-04561",
+    "nome": "Tecnicas Digitais II",
+    "periodo": 7,
+    "creditos": 4,
+    "carga_horaria": 75,
+    "pre_requisitos": ["FEN05-04498"]
+  },
+  {
+    "codigo": "FEN06-03713",
+    "nome": "Analise de Algoritmos",
+    "periodo": 7,
+    "creditos": 3,
+    "carga_horaria": 60,
+    "pre_requisitos": ["FEN06-03713"]
+  },
+  {
+    "codigo": "FEN04-05197",
     "nome": "Materiais Eletricos e Magneticos I",
     "periodo": 7,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN04-05105"]
   },
   {
-    "codigo": "FEN06-04243",
-    "nome": "Controle e Servomecanismos XI-A",
+    "codigo": "FEN05-05025",
+    "nome": "Controle e Servomecanismos III",
     "periodo": 7,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN04-05253"]
   },
   {
-    "codigo": "FEN05-04561",
+    "codigo": "FEN05-04975",
     "nome": "Principios de Telecomunicacoes III",
     "periodo": 7,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN05-04975"]
   },
+
   {
-    "codigo": "FEN06-03980",
-    "nome": "Microprocessadores e Redes de Computadores",
-    "periodo": 8,
-    "creditos": 4,
-    "carga_horaria": 75,
-    "pre_requisitos": ["FEN06-03713"]
-  },
-  {
-    "codigo": "FEN06-04049",
+    "codigo": "FEN06-05080",
     "nome": "Controle de Processos por Computador",
     "periodo": 8,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN06-04664","FEN04-05253"]
   },
   {
-    "codigo": "FEN06-04119",
+    "codigo": "FEN06-04049",
     "nome": "Laboratorio de Programacao I",
     "periodo": 8,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN06-03648"]
   },
   {
-    "codigo": "FEN02-01390",
+    "codigo": "FEN03-04439",
     "nome": "Administracao Aplicada a Engenharia III",
     "periodo": 8,
     "creditos": 3,
@@ -176,12 +169,12 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN06-04192",
+    "codigo": "FEN06-04243",
     "nome": "Engenharia de Sistemas A",
     "periodo": 8,
     "creditos": 3,
     "carga_horaria": 45,
-    "pre_requisitos": []
+    "pre_requisitos": ["FAF03-04439","FEN06-03559"]
   },
   {
     "codigo": "FEN06-04516",
@@ -189,34 +182,34 @@
     "periodo": 9,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN06-04119","FEN05-04975"]
   },
   {
-    "codigo": "FEN06-04578",
+    "codigo": "FEN06-04664",
     "nome": "Arquitetura de Sistemas Operacionais",
     "periodo": 9,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN06-03646","FEN06-04119"]
   },
   {
-    "codigo": "FEN06-04664",
+    "codigo": "FEN06-03980",
     "nome": "Caracteristicas das Linguagens de Programac. I",
     "periodo": 9,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN06-03980"]
   },
   {
-    "codigo": "FEN06-04718",
+    "codigo": "FEN06-04314",
     "nome": "Engenharia de Sistemas B",
     "periodo": 9,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": ["FEN06-04192"]
+    "pre_requisitos": ["FEN06-04243","FEN06-03648"]
   },
   {
-    "codigo": "FEN06-04314",
+    "codigo": "FEN06-04578",
     "nome": "Projeto de Graduacao XI-A",
     "periodo": 9,
     "creditos": 2,
@@ -224,44 +217,44 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN06-04832",
+    "codigo": "FEN06-03860",
     "nome": "Projeto de Ambiente Computacional",
     "periodo": 9,
     "creditos": 4,
     "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN07-02722"]
   },
   {
-    "codigo": "FEN06-05038",
-    "nome": "Compiladores",
+    "codigo": "FEN06-04516",
+    "nome": "Teoria de Compiladores",
     "periodo": 10,
     "creditos": 4,
     "carga_horaria": 75,
-    "pre_requisitos": ["FEN06-04664"]
+    "pre_requisitos": ["FEN06-03980","FEN06-03713"]
   },
   {
-    "codigo": "FEN06-05080",
+    "codigo": "FEN06-03860",
     "nome": "Instalacoes de Ambiente Computacional",
     "periodo": 10,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN04-05222","FEN05-01840"]
   },
   {
-    "codigo": "FEN06-04635",
+    "codigo": "FEN06-04386",
     "nome": "Engenharia de Sistemas C",
     "periodo": 10,
     "creditos": 3,
     "carga_horaria": 60,
-    "pre_requisitos": ["FEN06-04718"]
+    "pre_requisitos": ["FEN06-04314"]
   },
   {
-    "codigo": "FEN06-04386",
+    "codigo": "FEN06-04635",
     "nome": "Projeto de Graduacao XI-B",
     "periodo": 10,
     "creditos": 2,
     "carga_horaria": 45,
-    "pre_requisitos": ["FEN06-04314"]
+    "pre_requisitos": ["FEN06-04578"]
   },
   {
     "codigo": "FCE02-04657",
@@ -272,7 +265,7 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN05-04975",
+    "codigo": "FEN02-01390",
     "nome": "Engenharia na Sociedade II",
     "periodo": 10,
     "creditos": 2,
@@ -280,11 +273,11 @@
     "pre_requisitos": []
   },
   {
-    "codigo": "FEN05-05025",
+    "codigo": "FEN05-05038",
     "nome": "Estagio Supervisionado XI-A",
     "periodo": 10,
     "creditos": 1,
     "carga_horaria": 30,
-    "pre_requisitos": []
+    "pre_requisitos": ["FEN-07-027722"]
   }
 ]
