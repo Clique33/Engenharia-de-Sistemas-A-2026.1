@@ -6,6 +6,8 @@ class Disciplina:
         self.codigo = codigo
 
 
+
+
 class Curriculo:
     
     def __init__(self, curso, disciplinas=[], periodos=8):
@@ -45,6 +47,8 @@ class Curriculo:
                 print(f"Periodo da disciplina: {disciplina.periodo} \n")
                 
         
+
+
     def mostrar_disciplinas(self):
 
 
