@@ -1,29 +1,29 @@
 from validador_disciplinas import ValidadorDisciplinas
+from curriculo import Curriculo
 
 if __name__ == '__main__':
-    sistema = ValidadorDisciplinas()
+    # Inicializa o currículo lendo o JSON
+    curriculo_atual = Curriculo.carregar_de_arquivo('curriculo.json')
+    sistema = ValidadorDisciplinas(curriculo_atual)
     
-    # Setup: Simulando aluno que cursou PROG01 e MAT101
-    sistema.carregar_historico(["PROG01", "MAT101"])
+    # Setup: Simula aprovação em Circuitos Elétricos I para liberar matérias
+    sistema.carregar_historico(["FEN04-00944"])
 
-    print("Iniciando testes da Issue #19...")
-
-    # Teste 1: Mostrar os pré-requisitos da disciplina (Critério 1)
-    reqs = sistema.consultar_pre_requisitos("PROG02")
-    if reqs != ["PROG01", "MAT101"]:
-        print(f"ERRO TESTE 1: Esperava ['PROG01', 'MAT101'], retornou {reqs}")
+    # Teste 1: Permissão de disciplina liberada (depende de FEN04-00944)
+    # Testa indiretamente o tratamento da inconsistência da vírgula no JSON
+    if not sistema.verificar_permissao("FEN05-01840"): # Eletronica II
+        print("ERRO: Aluno cumpriu requisitos de Eletronica II, mas foi bloqueado.")
         exit()
 
-    # Teste 2: Aluno possui os pré-requisitos (Critério 2 - Permissão)
-    pode_cursar = sistema.verificar_permissao("PROG02")
-    if not pode_cursar:
-        print("ERRO TESTE 2: Aluno cumpriu os requisitos, mas foi bloqueado.")
+    # Teste 2: Bloqueio por falta de pré-requisito adicional
+    if sistema.verificar_permissao("FEN04-05222"): # Circuitos Eletricos IV exige FEN04-00944 e FEN05-04923
+        print("ERRO: Aluno sem todos os requisitos de Circuitos IV foi liberado.")
         exit()
 
-    # Teste 3: Aluno não possui os pré-requisitos (Critério 2 - Bloqueio)
-    pode_cursar_eng = sistema.verificar_permissao("ENG456")
-    if pode_cursar_eng:
-        print("ERRO TESTE 3: Aluno não cumpriu requisitos, mas foi liberado.")
+    # Teste 3: Listagem de disponíveis
+    disponiveis = sistema.disciplinas_disponiveis()
+    if "FEN05-01840" not in disponiveis:
+        print("ERRO: Eletronica II deveria estar na lista de disciplinas disponiveis.")
         exit()
 
-    print("Sucesso! Critérios de aceitação validados com precisão.")
+    print("Testes finalizados com sucesso. Motor integrado ao JSON.")
