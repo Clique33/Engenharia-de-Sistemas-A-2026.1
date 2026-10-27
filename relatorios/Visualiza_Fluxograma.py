@@ -1,7 +1,15 @@
+import os
+import sys
+import platform
 import tkinter as tk
 from tkinter import messagebox
-import platform
 
+# Garante que a raiz do projeto esteja no caminho do Python para importar de funcoes/
+caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if caminho_raiz not in sys.path:
+    sys.path.append(caminho_raiz)
+
+from funcoes.disciplina import Disciplina
 
 
 LEGENDAS_ESTILO = {
@@ -170,7 +178,7 @@ class FluxogramaApp:
         if delta > 0:
             self.zoom = min(self.zoom * 1.1, 2.0)
         else:
-            self.zoom = max(self.zoom * 0.9, 0.2)  # Permite diminuir bem mais para ver tudo de longe
+            self.zoom = max(self.zoom * 0.9, 0.2)
             
         self.renderizar()
 
@@ -181,7 +189,6 @@ class FluxogramaApp:
         inicio_y, altura_linha = 100 * self.zoom, 115 * self.zoom 
         w, h = 145 * self.zoom, 75 * self.zoom
 
-        # Fonte que escala livremente para não transbordar no zoom negativo
         fonte_titulos = ("Arial", max(1, int(11 * self.zoom)), "bold")
 
         # Títulos
@@ -245,7 +252,6 @@ class FluxogramaApp:
         
         card_id = self.canvas.create_rectangle(x, y, x + w, y + h, fill=cat["bg"], outline="#222", dash=dash_estilo, width=max(1, int(1.0*self.zoom)))
         
-        # Fontes sem trava de tamanho para escalar perfeitamente no zoom
         f_min = ("Arial", max(1, int(8 * self.zoom)))
         f_med = ("Arial", max(1, int(9 * self.zoom)))
         f_bold = ("Arial", max(1, int(9.5 * self.zoom)), "bold")
@@ -258,7 +264,6 @@ class FluxogramaApp:
         self.canvas.create_text(x + pad_x, y + h - pad_y, text=str(d["horas"]), font=f_med, fill="#111", anchor="w")
         self.canvas.create_text(x + w - pad_x, y + h - pad_y, text=str(d["creditos"]), font=f_med, fill="#111", anchor="e")
 
-        # Setinhas de pré-requisito estático
         if "requisito" in d:
             rx = x + 35 * self.zoom
             ry = y + h + 18 * self.zoom
@@ -271,7 +276,6 @@ class FluxogramaApp:
     def desenhar_rodape(self, in_x, in_y, h_linha):
         base_y = in_y + (6.5 * h_linha) + 50 * self.zoom
         
-        # Fontes escaláveis sem limite
         f_txt = ("Arial", max(1, int(9 * self.zoom)))
         f_bold = ("Arial", max(1, int(10 * self.zoom)), "bold")
 
@@ -299,7 +303,22 @@ class FluxogramaApp:
         nome_str = d['nome'].replace('\n', ' ')
         pre_str = ", ".join([self.mapa_disc[p]["nome"].replace('\n', ' ') for p in d.get("pre", [])]) if d.get("pre") else "Nenhum"
         
-        infos = f"Disciplina: {nome_str}\nCódigo: {d['codigo']}\nPeríodo Original: {d.get('col', 0) + 1}º\nCategoria: {d['categoria']}\n\nPré-requisitos: {pre_str}"
+        # Instanciação da classe Disciplina importada de funcoes.disciplina (busca o JSON na pasta "dados")
+        obj_disc = Disciplina(
+            codigo=d['codigo'],
+            nome=nome_str,
+            carga_horaria=d['horas'],
+            pre_requisitos=d.get("pre", [])
+        )
+        
+        infos = (
+            f"Disciplina: {obj_disc.nome}\n"
+            f"Código: {obj_disc.codigo}\n"
+            f"Carga Horária: {obj_disc.carga_horaria}h\n"
+            f"Período Original: {d.get('col', 0) + 1}º\n"
+            f"Categoria: {d['categoria']}\n\n"
+            f"Pré-requisitos: {pre_str}"
+        )
         messagebox.showinfo("Dados da Matéria", infos)
 
 

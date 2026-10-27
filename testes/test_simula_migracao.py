@@ -1,6 +1,12 @@
-# test_simula_migracao.py
-from simula_migracao import verificar_migracao, exibir_resultado
-from equivalencia import EquivalenciasCurriculares
+import os
+import sys
+
+caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if caminho_raiz not in sys.path:
+    sys.path.append(caminho_raiz)
+
+from funcoes.simula_migracao import verificar_migracao, exibir_resultado
+from funcoes.equivalencia import EquivalenciasCurriculares
 
 def executar_testes():
     print("=== EXECUTANDO CENÁRIOS DE TESTE COM INTEGRAÇÃO ===")

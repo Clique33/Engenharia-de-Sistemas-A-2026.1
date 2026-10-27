@@ -1,4 +1,3 @@
-
 import tkinter as tk
 
 # Tabela de estilos visuais por status
