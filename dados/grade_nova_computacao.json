@@ -1,0 +1,137 @@
+{
+  "IME01-00508": {
+    "codigo": "IME01-00508",
+    "nome": "Cálculo Diferencial e Integral I",
+    "grade": "Grade Antiga",
+    "creditos": 5,
+    "carga_horaria": 75,
+    "equivalencia": "IME01-17352 - Cálculo Diferencial e Integral I",
+    "pre_requisitos": []
+  },
+  "IME01-17352": {
+    "codigo": "IME01-17352",
+    "nome": "Cálculo Diferencial e Integral I",
+    "grade": "Grade Nova",
+    "creditos": 6,
+    "carga_horaria": 90,
+    "equivalencia": "IME01-00508 - Cálculo Diferencial e Integral I",
+    "pre_requisitos": []
+  },
+  "IME04-00627": {
+    "codigo": "IME04-00627",
+    "nome": "Introdução ao Processamento de Dados",
+    "grade": "Grade Antiga",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FEN06-NOVA-01 - Algoritmos Computacionais I",
+    "pre_requisitos": []
+  },
+  "FEN06-NOVA-01": {
+    "codigo": "FEN06-NOVA-01",
+    "nome": "Algoritmos Computacionais I",
+    "grade": "Grade Nova",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "IME04-00627 - Introdução ao Processamento de Dados",
+    "pre_requisitos": []
+  },
+  "FEN06-03648": {
+    "codigo": "FEN06-03648",
+    "nome": "Estruturas de Informação I",
+    "grade": "Grade Antiga",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FEN06-NOVA-02 - Estruturas de Informação A",
+    "pre_requisitos": [
+      "IME04-00627"
+    ]
+  },
+  "FEN06-NOVA-02": {
+    "codigo": "FEN06-NOVA-02",
+    "nome": "Estruturas de Informação A",
+    "grade": "Grade Nova",
+    "creditos": 5,
+    "carga_horaria": 75,
+    "equivalencia": "FEN06-03648 - Estruturas de Informação I",
+    "pre_requisitos": [
+      "FEN06-NOVA-01"
+    ]
+  },
+  "FEN02-01064": {
+    "codigo": "FEN02-01064",
+    "nome": "Engenharia na Sociedade I",
+    "grade": "Grade Antiga",
+    "creditos": 2,
+    "carga_horaria": 30,
+    "equivalencia": "FEN06-NOVA-03 - Computação, Ética e Transformação Digital",
+    "pre_requisitos": []
+  },
+  "FEN06-NOVA-03": {
+    "codigo": "FEN06-NOVA-03",
+    "nome": "Computação, Ética e Transformação Digital",
+    "grade": "Grade Nova",
+    "creditos": 2,
+    "carga_horaria": 30,
+    "equivalencia": "FEN02-01064 - Engenharia na Sociedade I",
+    "pre_requisitos": []
+  },
+  "FEN06-NOVA-04": {
+    "codigo": "FEN06-NOVA-04",
+    "nome": "Lógica em Programação",
+    "grade": "Grade Nova",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "Sem equivalência cadastrada",
+    "pre_requisitos": []
+  },
+  "FEN06-04314": {
+    "codigo": "FEN06-04314",
+    "nome": "Engenharia de Sistemas B",
+    "grade": "Grade Antiga",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FEN06-NOVA-05 - Projeto de Banco de Dados",
+    "pre_requisitos": [
+      "FEN06-03648",
+      "FEN06-04243"
+    ]
+  },
+  "FEN06-NOVA-05": {
+    "codigo": "FEN06-NOVA-05",
+    "nome": "Projeto de Banco de Dados",
+    "grade": "Grade Nova",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FEN06-04314 - Engenharia de Sistemas B",
+    "pre_requisitos": []
+  },
+  "FEN06-NOVA-06": {
+    "codigo": "FEN06-NOVA-06",
+    "nome": "Inteligência Computacional I",
+    "grade": "Grade Nova",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "Sem equivalência cadastrada",
+    "pre_requisitos": []
+  },
+  "FIS04-05212": {
+    "codigo": "FIS04-05212",
+    "nome": "Física Teórica e Experimental IV",
+    "grade": "Grade Antiga",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FIS04-NOVA / FIS03-NOVA - Física Teórica IV e Física Experimental IV",
+    "pre_requisitos": [
+      "FIS03-05185"
+    ]
+  },
+  "FIS04-NOVA": {
+    "codigo": "FIS04-NOVA",
+    "nome": "Física Teórica IV e Física Experimental IV",
+    "grade": "Grade Nova",
+    "creditos": 4,
+    "carga_horaria": 60,
+    "equivalencia": "FIS04-05212 - Física Teórica e Experimental IV",
+    "pre_requisitos": []
+  }
+}

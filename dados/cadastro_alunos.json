@@ -1,0 +1,14 @@
+{
+    "matricula_201020668899": {
+        "nome": "Pedro Guilherme Abreu dos Santos",
+        "email": "pedro.guilherme@email.com",
+        "telefone": "(21) 90000-0000",
+        "endereco": "Rua Principal, 123, Rio de Janeiro - RJ"
+    },
+    "matricula_201510445566": {
+        "nome": "Bruno Henrique",
+        "email": "bruno.henrique@email.com",
+        "telefone": "(21) 99999-2222",
+        "endereco": "Avenida Central, 456, Rio de Janeiro - RJ"
+    }
+}

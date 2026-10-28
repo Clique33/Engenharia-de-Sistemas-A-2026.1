@@ -1,0 +1,373 @@
+{
+  "FEN06-NOVA-01": {
+    "nome": "Algoritmos Computacionais I",
+    "periodo_recomendado": 1,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["IME 04-00627"]
+  },
+  "FEN06-NOVA-02": {
+    "nome": "Computação, Ética e Transformação Digital",
+    "periodo_recomendado": 1,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FEN 02-01064"]
+  },
+  "IME02-NOVA-01": {
+    "nome": "Álgebra Linear",
+    "periodo_recomendado": 1,
+    "carga_horaria": 90,
+    "creditos": 6,
+    "equivalencia_grade_antiga": ["IME 02-01388"]
+  },
+  "IME01-17352": {
+    "nome": "Cálculo Diferencial e Integral I",
+    "periodo_recomendado": 1,
+    "carga_horaria": 90,
+    "creditos": 6,
+    "equivalencia_grade_antiga": ["IME 01-00508"]
+  },
+  "FIS01-NOVA-TEO": {
+    "nome": "Física Teórica I",
+    "periodo_recomendado": 1,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FIS 01-05095"]
+  },
+  "FIS01-NOVA-EXP": {
+    "nome": "Física Experimental I",
+    "periodo_recomendado": 1,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FIS 01-05095"]
+  },
+  "FEN06-NOVA-03": {
+    "nome": "Estruturas de Informação A",
+    "periodo_recomendado": 2,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 06-03648"]
+  },
+  "FEN06-NOVA-04": {
+    "nome": "Lógica em Programação",
+    "periodo_recomendado": 2,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "IME06-NOVA-01": {
+    "nome": "Cálculo Numérico",
+    "periodo_recomendado": 2,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["IME 04-04541"]
+  },
+  "IME01-17356": {
+    "nome": "Cálculo Diferencial e Integral II",
+    "periodo_recomendado": 2,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["IME 01-00854"]
+  },
+  "FIS02-NOVA-TEO": {
+    "nome": "Física Teórica II",
+    "periodo_recomendado": 2,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FIS 02-05143"]
+  },
+  "FIS02-NOVA-EXP": {
+    "nome": "Física Experimental II",
+    "periodo_recomendado": 2,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FIS 02-05143"]
+  },
+  "FEN06-NOVA-05": {
+    "nome": "Projetos de Extensão",
+    "periodo_recomendado": 3,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-06": {
+    "nome": "Análise de Algoritmos I",
+    "periodo_recomendado": 3,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-03713"]
+  },
+  "FEN05-NOVA-01": {
+    "nome": "Circuitos Eletrônicos I",
+    "periodo_recomendado": 3,
+    "carga_horaria": 90,
+    "creditos": 6,
+    "equivalencia_grade_antiga": ["FEN 05-01620"]
+  },
+  "IME05-NOVA-01": {
+    "nome": "Probabilidade e Estatística",
+    "periodo_recomendado": 3,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["IME 05-05316"]
+  },
+  "IME01-17363": {
+    "nome": "Cálculo Diferencial e Integral III",
+    "periodo_recomendado": 3,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["IME 01-03646"]
+  },
+  "FIS03-NOVA-TEO": {
+    "nome": "Eletromagnetismo Básico Teórico",
+    "periodo_recomendado": 3,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FIS 03-05185"]
+  },
+  "FIS03-NOVA-EXP": {
+    "nome": "Eletromagnetismo Básico Experimental",
+    "periodo_recomendado": 3,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FIS 03-05185"]
+  },
+  "FEN06-NOVA-07": {
+    "nome": "Laboratório de Programação",
+    "periodo_recomendado": 4,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04049"]
+  },
+  "FEN06-NOVA-08": {
+    "nome": "Laboratório de Programação Orientada a Objetos",
+    "periodo_recomendado": 4,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-03980"]
+  },
+  "FEN05-NOVA-02": {
+    "nome": "Técnicas Digitais",
+    "periodo_recomendado": 4,
+    "carga_horaria": 90,
+    "creditos": 6,
+    "equivalencia_grade_antiga": ["FEN 05-04498"]
+  },
+  "FEN06-NOVA-09": {
+    "nome": "Processamento de Sinais e Imagens",
+    "periodo_recomendado": 4,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": []
+  },
+  "FIS04-NOVA-TEO": {
+    "nome": "Física Teórica IV",
+    "periodo_recomendado": 4,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FIS 04-05212"]
+  },
+  "FIS04-NOVA-EXP": {
+    "nome": "Física Experimental IV",
+    "periodo_recomendado": 4,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FIS 04-05212"]
+  },
+  "FEN06-NOVA-10": {
+    "nome": "Teoria dos Grafos e Aplicações",
+    "periodo_recomendado": 5,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-11": {
+    "nome": "Inteligência Computacional I",
+    "periodo_recomendado": 5,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-12": {
+    "nome": "Fundamentos de Computadores I",
+    "periodo_recomendado": 5,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-03787"]
+  },
+  "FEN04-NOVA-01": {
+    "nome": "Circuitos em Corrente Contínua",
+    "periodo_recomendado": 5,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 04-00944"]
+  },
+  "FEN06-NOVA-13": {
+    "nome": "Inteligência Computacional II",
+    "periodo_recomendado": 6,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-14": {
+    "nome": "Mineração de Dados",
+    "periodo_recomendado": 6,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-15": {
+    "nome": "Engenharia de Sistemas",
+    "periodo_recomendado": 6,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04243"]
+  },
+  "FEN06-NOVA-16": {
+    "nome": "Arquitetura de Computadores A",
+    "periodo_recomendado": 6,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 06-04119"]
+  },
+  "FEN04-NOVA-02": {
+    "nome": "Circuitos em Corrente Alternada",
+    "periodo_recomendado": 6,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 04-05222"]
+  },
+  "FEN05-NOVA-03": {
+    "nome": "Materiais Elétricos e Eletrônicos",
+    "periodo_recomendado": 6,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 04-05197"]
+  },
+  "FEN06-NOVA-17": {
+    "nome": "Teoria de Compiladores I",
+    "periodo_recomendado": 7,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 06-04516"]
+  },
+  "FEN06-NOVA-18": {
+    "nome": "Redes de Computadores e Sistemas Distribuídos",
+    "periodo_recomendado": 7,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04718"]
+  },
+  "FEN06-NOVA-19": {
+    "nome": "Projeto de Banco de Dados",
+    "periodo_recomendado": 7,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04314"]
+  },
+  "FEN06-NOVA-20": {
+    "nome": "Projeto de Sistemas Operacionais",
+    "periodo_recomendado": 7,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04664"]
+  },
+  "FEN06-NOVA-21": {
+    "nome": "Instalação de Ambientes Computacionais",
+    "periodo_recomendado": 7,
+    "carga_horaria": 45,
+    "creditos": 3,
+    "equivalencia_grade_antiga": ["FEN 06-03860"]
+  },
+  "FEN09-NOVA-01": {
+    "nome": "Macroeconomia aplicada à Engenharia",
+    "periodo_recomendado": 7,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FCE 02-04657"]
+  },
+  "FEN09-NOVA-02": {
+    "nome": "Empreendedorismo na Engenharia",
+    "periodo_recomendado": 8,
+    "carga_horaria": 45,
+    "creditos": 3,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-22": {
+    "nome": "Segurança de Redes",
+    "periodo_recomendado": 8,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-23": {
+    "nome": "Análise e Projeto de Sistemas",
+    "periodo_recomendado": 8,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04386"]
+  },
+  "FEN06-NOVA-24": {
+    "nome": "Sistemas Embutidos",
+    "periodo_recomendado": 8,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-25": {
+    "nome": "Computação Paralela e Distribuída",
+    "periodo_recomendado": 8,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FEN 06-04192"]
+  },
+  "FEN06-NOVA-26": {
+    "nome": "Controle de Processos por Computador I",
+    "periodo_recomendado": 8,
+    "carga_horaria": 75,
+    "creditos": 5,
+    "equivalencia_grade_antiga": ["FEN 06-05080"]
+  },
+  "FEN06-NOVA-27": {
+    "nome": "Metodologia Científica para Engenharia de Computação",
+    "periodo_recomendado": 9,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FEN 06-04578"]
+  },
+  "FEN06-NOVA-ELETIVA-01": {
+    "nome": "Eletiva Definida",
+    "periodo_recomendado": 9,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN09-NOVA-03": {
+    "nome": "Administração Financeira de Projeto",
+    "periodo_recomendado": 9,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": ["FAF 03-04439"]
+  },
+  "FEN06-NOVA-28": {
+    "nome": "Prática Extensionista em Engenharia de Computação",
+    "periodo_recomendado": 9,
+    "carga_horaria": 180,
+    "creditos": 12,
+    "equivalencia_grade_antiga": []
+  },
+  "FEN06-NOVA-29": {
+    "nome": "Projeto de Graduação XI",
+    "periodo_recomendado": 10,
+    "carga_horaria": 30,
+    "creditos": 2,
+    "equivalencia_grade_antiga": ["FEN 06-04635"]
+  },
+  "FEN06-NOVA-ELETIVA-02": {
+    "nome": "Eletiva Definida",
+    "periodo_recomendado": 10,
+    "carga_horaria": 60,
+    "creditos": 4,
+    "equivalencia_grade_antiga": []
+  }
+}
