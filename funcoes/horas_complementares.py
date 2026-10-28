@@ -1,5 +1,6 @@
 from enum import Enum
-
+import json
+import os
 
 class TipoAtividade(Enum):
     """Tipos de atividades que integram a carga de horas complementares."""
@@ -20,49 +21,68 @@ class AtividadeComplementar:
         return f"{self.tipo.value}: {self.nome} ({self.horas}h)"
 
 
+
 class HorasComplementares:
-    def __init__(self, meta_horas):
-        self.meta_horas = meta_horas
-        self.atividades = []
+    """Gerencia e persiste as horas complementares divididas em:
+    - Carga de Extensão
+    - Atividade Complementar
+    - Atividade Curricular de Extensão
+    """
+    def __init__(self):
+        self.carga_extensao = []
+        self.atividade_complementar = []
+        self.atividade_curricular_extensao = []
 
-    def registrar_atividade(self, nome_atividade, horas, tipo=TipoAtividade.ATIVIDADE_COMPLEMENTAR):
-        if horas <= 0:
-            return False
-        self.atividades.append({"atividade": nome_atividade, "horas": horas, "tipo": tipo})
-        return True
+    def adicionar_carga_extensao(self, descricao: str, horas: int):
+        self.carga_extensao.append({"descricao": descricao, "horas": horas})
 
-    def registrar_carga_extensao(self, nome_atividade, horas):
-        """Cadastra uma Carga de Extensão."""
-        return self.registrar_atividade(
-            nome_atividade, horas, TipoAtividade.CARGA_EXTENSAO
+    def adicionar_atividade_complementar(self, descricao: str, horas: int, categoria: str = ""):
+        self.atividade_complementar.append({"descricao": descricao, "horas": horas, "categoria": categoria})
+
+    def adicionar_atividade_curricular_extensao(self, codigo: str, nome: str, horas: int):
+        self.atividade_curricular_extensao.append({"codigo": codigo, "nome": nome, "horas": horas})
+
+    def total_horas(self) -> int:
+        """Calcula o total de horas acumuladas em todas as categorias."""
+        return (
+            sum(item.get("horas", 0) for item in self.carga_extensao) +
+            sum(item.get("horas", 0) for item in self.atividade_complementar) +
+            sum(item.get("horas", 0) for item in self.atividade_curricular_extensao)
         )
 
-    def registrar_atividade_complementar(self, nome_atividade, horas):
-        """Cadastra uma Atividade Complementar."""
-        return self.registrar_atividade(
-            nome_atividade, horas, TipoAtividade.ATIVIDADE_COMPLEMENTAR
-        )
+    def to_dict(self) -> dict:
+        """Converte a estrutura interna para dicionário."""
+        return {
+            "carga_extensao": self.carga_extensao,
+            "atividade_complementar": self.atividade_complementar,
+            "atividade_curricular_extensao": self.atividade_curricular_extensao
+        }
 
-    def registrar_atividade_curricular_extensao(self, nome_atividade, horas):
-        """Cadastra uma Atividade Curricular de Extensão."""
-        return self.registrar_atividade(
-            nome_atividade, horas, TipoAtividade.ATIVIDADE_CURRICULAR_EXTENSAO
-        )
+    def salvar_json(self, caminho_arquivo: str):
+        """Salva todas as horas complementares cadastradas em um arquivo JSON."""
+        dados = self.to_dict()
+        try:
+            with open(caminho_arquivo, 'w', encoding='utf-8') as f:
+                json.dump(dados, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            raise RuntimeError(f"Erro ao salvar o arquivo de horas complementares: {e}")
 
-    def calcular_total(self, tipo=None):
-        if tipo is None:
-            return sum(item["horas"] for item in self.atividades)
-        return sum(
-            item["horas"] for item in self.atividades if item["tipo"] == tipo
-        )
+    @classmethod
+    def carregar_json(cls, caminho_arquivo: str) -> "HorasComplementares":
+        """Carrega os dados de um arquivo JSON e retorna uma nova instância de HorasComplementares."""
+        if not os.path.exists(caminho_arquivo):
+            raise FileNotFoundError(f"O arquivo '{caminho_arquivo}' não foi encontrado.")
+        
+        try:
+            with open(caminho_arquivo, 'r', encoding='utf-8') as f:
+                dados = json.load(f)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"O arquivo '{caminho_arquivo}' possui um formato JSON inválido: {e}")
+        except Exception as e:
+            raise RuntimeError(f"Erro ao carregar o arquivo de horas complementares: {e}")
 
-    def meta_atingida(self):
-        return self.calcular_total() >= self.meta_horas
-
-    def horas_faltantes(self):
-        faltam = self.meta_horas - self.calcular_total()
-        return faltam if faltam > 0 else 0
-
-    def obter_atividades_por_tipo(self, tipo: TipoAtividade):
-        """Retorna apenas as atividades de um tipo específico."""
-        return [item for item in self.atividades if item["tipo"] == tipo]
+        instancia = cls()
+        instancia.carga_extensao = dados.get("carga_extensao", [])
+        instancia.atividade_complementar = dados.get("atividade_complementar", [])
+        instancia.atividade_curricular_extensao = dados.get("atividade_curricular_extensao", [])
+        return instancia

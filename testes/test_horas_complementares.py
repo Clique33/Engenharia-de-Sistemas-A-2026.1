@@ -1,133 +1,70 @@
+import unittest
+import tempfile
 import os
-import sys
-
-caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if caminho_raiz not in sys.path:
-    sys.path.append(caminho_raiz)
-
-from funcoes.horas_complementares import (
-    HorasComplementares,
-    TipoAtividade,
+import sys 
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "../funcoes"))
 )
+from horas_complementares import HorasComplementares
+
+class TestHorasComplementares(unittest.TestCase):
+    def setUp(self):
+        self.hc = HorasComplementares()
+        self.hc.adicionar_carga_extensao("Projeto Social Comunitário", 30)
+        self.hc.adicionar_atividade_complementar("Participação em Congresso Acadêmico", 20, "Ensino")
+        self.hc.adicionar_atividade_curricular_extensao("EXT101", "Extensão Tecnológica Aplicada", 40)
+
+    def test_salvar_e_carregar_json(self):
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json', encoding='utf-8') as temp:
+            caminho_temp = temp.name
+
+        try:
+            # Salva os dados
+            self.hc.salvar_json(caminho_temp)
+            self.assertTrue(os.path.exists(caminho_temp))
+
+            # Carrega os dados de volta
+            hc_carregado = HorasComplementares.carregar_json(caminho_temp)
+
+            # Valida preservação de Carga de Extensão
+            self.assertEqual(len(hc_carregado.carga_extensao), 1)
+            self.assertEqual(hc_carregado.carga_extensao[0]["descricao"], "Projeto Social Comunitário")
+            self.assertEqual(hc_carregado.carga_extensao[0]["horas"], 30)
+
+            # Valida preservação de Atividade Complementar
+            self.assertEqual(len(hc_carregado.atividade_complementar), 1)
+            self.assertEqual(hc_carregado.atividade_complementar[0]["descricao"], "Participação em Congresso Acadêmico")
+            self.assertEqual(hc_carregado.atividade_complementar[0]["horas"], 20)
+            self.assertEqual(hc_carregado.atividade_complementar[0]["categoria"], "Ensino")
+
+            # Valida preservação de Atividade Curricular de Extensão
+            self.assertEqual(len(hc_carregado.atividade_curricular_extensao), 1)
+            self.assertEqual(hc_carregado.atividade_curricular_extensao[0]["codigo"], "EXT101")
+            self.assertEqual(hc_carregado.atividade_curricular_extensao[0]["nome"], "Extensão Tecnológica Aplicada")
+            self.assertEqual(hc_carregado.atividade_curricular_extensao[0]["horas"], 40)
+
+            # Valida o cálculo total de horas (30 + 20 + 40 = 90)
+            self.assertEqual(hc_carregado.total_horas(), 90)
+
+        finally:
+            if os.path.exists(caminho_temp):
+                os.unlink(caminho_temp)
+
+    def test_arquivo_inexistente(self):
+        with self.assertRaises(FileNotFoundError):
+            HorasComplementares.carregar_json("caminho_inexistente_abc.json")
+
+    def test_json_invalido(self):
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.json', encoding='utf-8') as temp:
+            temp.write("{ 'formato_invalido': sem_fechar ... ")
+            caminho_temp = temp.name
+
+        try:
+            with self.assertRaises(ValueError):
+                HorasComplementares.carregar_json(caminho_temp)
+        finally:
+            if os.path.exists(caminho_temp):
+                os.unlink(caminho_temp)
 
 if __name__ == '__main__':
-    print("Iniciando testes...")
-
-    # ------------------------------------------------------------------
-    # Critério 1: Total de horas (compatibilidade com a API original)
-    # ------------------------------------------------------------------
-    sistema = HorasComplementares(meta_horas=100)
-
-    sistema.registrar_atividade("Curso de Python", 40)
-    sistema.registrar_atividade("Semana de Engenharia", 15)
-
-    total = sistema.calcular_total()
-    if total != 55:
-        print(f"ERRO CRÍTÉRIO 1: Esperava 55, mas o sistema retornou {total}")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 2: Listar atividades registradas
-    # ------------------------------------------------------------------
-    atividades = sistema.atividades
-    if len(atividades) != 2 or atividades[0]["atividade"] != "Curso de Python":
-        print("ERRO CRÍTÉRIO 2: Falha ao listar as atividades registradas.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 3: Cadastrar Carga de Extensão
-    # ------------------------------------------------------------------
-    carga = HorasComplementares(meta_horas=200)
-    ok = carga.registrar_carga_extensao("Estágio Supervisionado", 120)
-    if not ok:
-        print("ERRO CRÍTÉRIO 3: Falha ao cadastrar Carga de Extensão.")
-        exit()
-
-    tipo_carga = carga.atividades[0]["tipo"]
-    if tipo_carga != TipoAtividade.CARGA_EXTENSAO:
-        print(f"ERRO CRÍTÉRIO 3: Tipo esperado Carga de Extensão, recebido {tipo_carga}")
-        exit()
-
-    if carga.calcular_total(TipoAtividade.CARGA_EXTENSAO) != 120:
-        print("ERRO CRÍTÉRIO 3: Total de Carga de Extensão incorreto.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 4: Cadastrar Atividade Curricular de Extensão
-    # ------------------------------------------------------------------
-    atv_curricular = HorasComplementares(meta_horas=50)
-    ok = atv_curricular.registrar_atividade_curricular_extensao(
-        "Projeto de Extensão I", 30
-    )
-    if not ok:
-        print("ERRO CRÍTÉRIO 4: Falha ao cadastrar Atividade Curricular de Extensão.")
-        exit()
-
-    esperado_ce = TipoAtividade.ATIVIDADE_CURRICULAR_EXTENSAO
-    if atv_curricular.atividades[0]["tipo"] != esperado_ce:
-        print("ERRO CRÍTÉRIO 4: Tipo de Atividade Curricular de Extensão incorreto.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 5: Cadastrar Atividade Complementar
-    # ------------------------------------------------------------------
-    atv_complementar = HorasComplementares(meta_horas=100)
-    ok = atv_complementar.registrar_atividade_complementar("Palestra de TI", 8)
-    if not ok:
-        print("ERRO CRÍTÉRIO 5: Falha ao cadastrar Atividade Complementar.")
-        exit()
-
-    if atv_complementar.atividades[0]["tipo"] != TipoAtividade.ATIVIDADE_COMPLEMENTAR:
-        print("ERRO CRÍTÉRIO 5: Tipo de Atividade Complementar incorreto.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 6: Soma por tipo e filtragem
-    # ------------------------------------------------------------------
-    completo = HorasComplementares(meta_horas=100)
-    completo.registrar_carga_extensao("Estágio 1", 40)
-    completo.registrar_atividade_complementar("Palestra", 10)
-    completo.registrar_atividade_curricular_extensao("Projeto Extensão", 15)
-    completo.registrar_carga_extensao("Estágio 2", 20)
-
-    if completo.calcular_total() != 85:
-        print(f"ERRO CRÍTÉRIO 6: Total geral esperado 85, recebido {completo.calcular_total()}")
-        exit()
-    if completo.calcular_total(TipoAtividade.CARGA_EXTENSAO) != 60:
-        print("ERRO CRÍTÉRIO 6: Total de Carga de Extensão esperado 60.")
-        exit()
-    if completo.calcular_total(TipoAtividade.ATIVIDADE_COMPLEMENTAR) != 10:
-        print("ERRO CRÍTÉRIO 6: Total de Atividade Complementar esperado 10.")
-        exit()
-    if completo.calcular_total(TipoAtividade.ATIVIDADE_CURRICULAR_EXTENSAO) != 15:
-        print("ERRO CRÍTÉRIO 6: Total de Atividade Curricular esperado 15.")
-        exit()
-
-    atividades_ce = completo.obter_atividades_por_tipo(TipoAtividade.CARGA_EXTENSAO)
-    if len(atividades_ce) != 2:
-        print("ERRO CRÍTÉRIO 6: Esperava 2 atividades de Carga de Extensão.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 7: Horas inválidas são rejeitadas
-    # ------------------------------------------------------------------
-    if sistema.registrar_atividade("Atividade Inválida", 0):
-        print("ERRO CRÍTÉRIO 7: Atividade com 0 horas deveria ser rejeitada.")
-        exit()
-    if sistema.registrar_atividade("Atividade Negativa", -5):
-        print("ERRO CRÍTÉRIO 7: Atividade com horas negativas deveria ser rejeitada.")
-        exit()
-
-    # ------------------------------------------------------------------
-    # Critério 8: Meta atingida
-    # ------------------------------------------------------------------
-    meta_ok = HorasComplementares(meta_horas=10)
-    meta_ok.registrar_atividade_complementar("Curso", 15)
-    if not meta_ok.meta_atingida():
-        print("ERRO CRÍTÉRIO 8: Meta deveria estar atingida com 15h >= 10h.")
-        exit()
-    if meta_ok.horas_faltantes() != 0:
-        print("ERRO CRÍTÉRIO 8: horas_faltantes deveria ser 0 quando meta atingida.")
-        exit()
-
-    print("Sucesso! Os critérios de aceitação foram validados com êxito.")
+    unittest.main()
