@@ -1,4 +1,11 @@
-from horas_complementares import (
+import os
+import sys
+
+caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if caminho_raiz not in sys.path:
+    sys.path.append(caminho_raiz)
+
+from funcoes.horas_complementares import (
     HorasComplementares,
     TipoAtividade,
 )
