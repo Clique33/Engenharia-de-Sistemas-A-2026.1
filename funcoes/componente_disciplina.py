@@ -1,5 +1,8 @@
+<<<<<<< HEAD:funcoes/componente_disciplina.py
+=======
 import json
 import os
+>>>>>>> main:componente_disciplina.py
 import tkinter as tk
 
 # Tabela de estilos visuais por status

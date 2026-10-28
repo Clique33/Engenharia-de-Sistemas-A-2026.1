@@ -1,4 +1,4 @@
-from curriculo import Curriculo
+from funcoes.curriculo import Curriculo
 
 class ValidadorDisciplinas:
     def __init__(self, curriculo: Curriculo):

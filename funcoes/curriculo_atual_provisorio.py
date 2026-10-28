@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 from typing import Dict, Optional
 
-# Importando a classe Disciplina do seu arquivo disciplina.py
-from disciplina import Disciplina
+# Importando a classe Disciplina ajustada para a subpasta funcoes
+from funcoes.disciplina import Disciplina
 
 class Curriculo:
 
@@ -34,9 +34,9 @@ class Curriculo:
                 codigo=item["codigo"],
                 nome=item["nome"],
                 carga_horaria=item["carga_horaria"],
-                periodo_recomendado=item["periodo"], # Adaptado de "periodo" para "periodo_recomendado"
                 pre_requisitos=item.get("pre_requisitos", []),
             )
+            setattr(disciplina, 'periodo_recomendado', item.get("periodo"))
             curriculo.adicionar_disciplina(disciplina)
 
         return curriculo

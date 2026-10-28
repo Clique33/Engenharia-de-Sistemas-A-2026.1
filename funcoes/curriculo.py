@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from typing import Dict, Optional
-from disciplina import Disciplina
+from funcoes.disciplina import Disciplina
 
 class Curriculo:
     def __init__(self, curso="Engenharia de Computação"):
@@ -25,7 +25,7 @@ class Curriculo:
     def disciplinas_por_periodo(self, periodo: int):
         print(f"Disciplinas do {periodo}º período:")
         for disciplina in self.disciplinas.values():
-            if periodo == disciplina.periodo_recomendado:
+            if periodo == getattr(disciplina, 'periodo_recomendado', None):
                 print(f"Código: {disciplina.codigo} | Nome: {disciplina.nome}")
 
     def mostrar_disciplinas(self):
@@ -35,13 +35,19 @@ class Curriculo:
         
         print(f"\nImprimindo disciplinas do curso de {self.curso}:")
         for disciplina in self.disciplinas.values():
-            print(f"Código: {disciplina.codigo} | Nome: {disciplina.nome} | Período: {disciplina.periodo_recomendado}")
+            periodo = getattr(disciplina, 'periodo_recomendado', 'N/A')
+            print(f"Código: {disciplina.codigo} | Nome: {disciplina.nome} | Período: {periodo}")
 
     @classmethod
-    def carregar_de_arquivo(cls, caminho_arquivo: str, curso="Engenharia de Computação") -> "Curriculo":
-        caminho = Path(caminho_arquivo)
+    def carregar_de_arquivo(cls, caminho_arquivo: str = None, curso="Engenharia de Computação") -> "Curriculo":
+        if caminho_arquivo is None:
+            caminho_base = Path(__file__).resolve().parent.parent
+            caminho = caminho_base / "dados" / "curriculo.json"
+        else:
+            caminho = Path(caminho_arquivo)
+
         if not caminho.exists():
-            raise FileNotFoundError(f"Arquivo não encontrado: {caminho_arquivo}")
+            raise FileNotFoundError(f"Arquivo não encontrado: {caminho}")
 
         with open(caminho, "r", encoding="utf-8") as f:
             dados = json.load(f)
@@ -52,9 +58,9 @@ class Curriculo:
                 codigo=item["codigo"],
                 nome=item["nome"],
                 carga_horaria=item["carga_horaria"],
-                periodo_recomendado=item["periodo"],
                 pre_requisitos=item.get("pre_requisitos", []),
             )
+            setattr(disciplina, 'periodo_recomendado', item.get("periodo"))
             curriculo.adicionar_disciplina(disciplina)
 
         return curriculo

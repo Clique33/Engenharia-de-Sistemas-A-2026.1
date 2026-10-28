@@ -1,3 +1,12 @@
+import os
+import sys
+
+# Garante que a raiz do projeto esteja no caminho do Python para futuras importações do pacote funcoes
+caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if caminho_raiz not in sys.path:
+    sys.path.append(caminho_raiz)
+
+
 def disciplinas_disponiveis(disciplinas, concluidas):
     """
     Retorna as disciplinas que o aluno pode cursar atualmente.
