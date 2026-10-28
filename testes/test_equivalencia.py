@@ -1,4 +1,11 @@
-from equivalencia import EquivalenciasCurriculares
+import os
+import sys
+
+caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if caminho_raiz not in sys.path:
+    sys.path.append(caminho_raiz)
+
+from funcoes.equivalencia import EquivalenciasCurriculares
 
 if __name__ == '__main__':
     sistema = EquivalenciasCurriculares()
