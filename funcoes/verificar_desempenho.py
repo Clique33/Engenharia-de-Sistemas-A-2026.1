@@ -40,7 +40,8 @@ def obter_melhores_disciplinas(disciplinas: list) -> list:
 if __name__ == '__main__':
     print("Carregando JSON e extraindo ranking...")
 
-    caminho_json = os.path.join('Dados', 'historico_alunos.json')
+    caminho_raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    caminho_json = os.path.join(caminho_raiz, 'dados', 'historico_alunos.json')
 
     disciplinas_do_aluno = carregar_historico_aluno(caminho_json, 'matricula_201020668899')
 
