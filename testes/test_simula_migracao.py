@@ -1,6 +1,6 @@
 # test_simula_migracao.py
-from simula_migracao import verificar_migracao, exibir_resultado
-from equivalencia import EquivalenciasCurriculares
+from funcoes.simula_migracao import verificar_migracao, exibir_resultado
+from funcoes.equivalencia import EquivalenciasCurriculares
 
 def executar_testes():
     print("=== EXECUTANDO CENÁRIOS DE TESTE COM INTEGRAÇÃO ===")

@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from typing import Dict, Optional
-from disciplina import Disciplina
+from funcoes.disciplina import Disciplina
 
 class Curriculo:
     def __init__(self, curso="Engenharia de Computação"):
