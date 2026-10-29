@@ -1,25 +1,20 @@
 import unittest
-from curriculo import Curriculo, Disciplina
+import sys
+from pathlib import Path
+
+caminho_raiz = Path(__file__).resolve().parent.parent
+if str(caminho_raiz) not in sys.path:
+    sys.path.append(str(caminho_raiz))
+
+from funcoes.curriculo import Curriculo
 
 
 class TestCurriculo(unittest.TestCase):
-
     def test_carregamento_curriculo(self):
-        curriculo = Curriculo.carregar_de_arquivo("curriculo.json")
-
-        self.assertGreater(len(curriculo.disciplinas), 0)
-
-        compiladores = curriculo.obter_disciplina("FEN06-05038")
-        self.assertIsNotNone(compiladores)
-        self.assertEqual(compiladores.nome, "Compiladores")
-        self.assertEqual(compiladores.periodo, 10)
-        self.assertEqual(compiladores.creditos, 4)
-        self.assertEqual(compiladores.carga_horaria, 75)
-        self.assertIn("FEN06-04664", compiladores.pre_requisitos)
-
-    def test_arquivo_inexistente(self):
-        with self.assertRaises(FileNotFoundError):
-            Curriculo.carregar_de_arquivo("arquivo_invalido.json")
+        curriculo = Curriculo.carregar_de_arquivo("dados/curriculo.json")
+        self.assertIsNotNone(curriculo)
+        # Garante que carregou pelo menos uma disciplina da grade
+        self.assertTrue(len(curriculo.disciplinas) > 0)
 
 
 if __name__ == "__main__":

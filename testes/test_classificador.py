@@ -1,11 +1,6 @@
-import pytest  # type: ignore
 
-from classificador import (
-    classificar_disciplinas,
-    filtrar_por_situacao,
-    interpretar_situacao,
-)
-from situacao import Situacao
+from funcoes.classificador import classificar_disciplinas
+from funcoes.situacao import Situacao
 
 CURRICULO = ["MAT001", "MAT002", "FIS001", "COMP001"]
 

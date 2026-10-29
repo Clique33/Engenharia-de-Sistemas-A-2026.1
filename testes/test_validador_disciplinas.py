@@ -1,5 +1,5 @@
-from validador_disciplinas import ValidadorDisciplinas
-from curriculo import Curriculo
+from funcoes.validador_disciplinas import ValidadorDisciplinas
+from funcoes.curriculo import Curriculo
 
 if __name__ == '__main__':
     # Inicializa o currículo lendo o JSON

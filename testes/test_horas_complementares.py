@@ -1,7 +1,4 @@
-from horas_complementares import (
-    HorasComplementares,
-    TipoAtividade,
-)
+from funcoes.horas_complementares import HorasComplementares
 
 if __name__ == '__main__':
     print("Iniciando testes...")

@@ -1,6 +1,6 @@
 import unicodedata
 
-from src.situacao import Situacao
+from funcoes.situacao import Situacao
 
 # Precedência: quanto maior, mais forte. Aprovação prevalece sobre
 # qualquer registro anterior da mesma disciplina.

@@ -1,4 +1,5 @@
-from equivalencia import EquivalenciasCurriculares
+
+from funcoes.equivalencia import EquivalenciasCurriculares
 
 if __name__ == '__main__':
     sistema = EquivalenciasCurriculares()
